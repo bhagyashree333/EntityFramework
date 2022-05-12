@@ -56,7 +56,6 @@ namespace EntityFrameworkProj1.Data_Access.Services
             int studidtobeupdated = int.Parse(Console.ReadLine());
 
             using var context = new StudentContextClass();
-
             var mark = context.Marks.FirstOrDefault(x => x.Studentid == studidtobeupdated);
             if (mark == null)
             {
@@ -64,21 +63,24 @@ namespace EntityFrameworkProj1.Data_Access.Services
                 return;
             }
 
-            Console.WriteLine("Enter New Course code");
-            string ncoursecode = Console.ReadLine();
-            Console.WriteLine("Enter New course Title");
-            string ncoursetitle = Console.ReadLine();
-            Console.WriteLine("Enter New Course Description");
-            string ncoursedescription = Console.ReadLine();
+            Console.WriteLine("Enter New Sub_id");
+            int nsubid = int.Parse(Console.ReadLine());
 
-            course.Course_code = ncoursecode;
-            course.course_Title = ncoursetitle;
-            course.Course_description = ncoursedescription;
+            Console.WriteLine("Enter markse");
+            int nmarks = int.Parse(Console.ReadLine());
 
-            context.Courses.Update(course);
+
+            mark.Sub_id = nsubid;
+            mark.marks = nmarks;
+
+            context.Marks.Update(mark);
             context.SaveChanges();
 
+
+
             select();
+
+
 
         }
     }

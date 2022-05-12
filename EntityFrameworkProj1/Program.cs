@@ -3,16 +3,17 @@ using EntityFrameworkProj1.Data_Access.Services;
 
 Console.WriteLine("Hello, World!");
 
-CourseManagement course = new CourseManagement();
-course.select();
+//CourseManagement course = new CourseManagement();
+//course.select();
 //course.AddCourse();
-course.UpdateCourse();
+//course.UpdateCourse();
 
 //MarksManagement m11 = new MarksManagement();
 //m11.select();
 
-//StudentManagement stud1=new StudentManagement();
-//stud1.select();
+StudentManagement stud1=new StudentManagement();
+stud1.select();
+stud1.UpdateStudent();
 
 //SubjectManagement submanagement=new SubjectManagement();
 //submanagement.select();
